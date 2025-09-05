@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio de Mamadou Dian DIALLO</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Menu Hamburger -->
+    <nav>
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="nav-menu">
+            <a href="#hero">Accueil</a>
+            <a href="#about">À propos</a>
+            <a href="#projects">Projets</a>
+            <a href="#skills">Compétences</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Section Hero -->
+    <section id="hero">
+        <div class="container">
+            <!-- Ta photo -->
+            <img src="Mamadou.jpg" alt="Mamadou Dian Diallo" class="hero-photo">
+
+            <div class="container">
+                <h1>Je suis Mamadou, Développeur en devenir passionné par le web et le design !</h1>
+                <a href="#projects" class="btn">Voir mes projets</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>À propos</h2>
+            <p>Bonjour ! Je m'appelle Mamadou Dian Diallo. Je suis étudiant et passionné par l'intelligence artificielle, le développement web et le management. 
+            Je travaille actuellement sur mon projet SaaS et je me forme activement pour devenir CTO dans les 5 prochaines années. 
+            Mon objectif est de maîtriser toutes les compétences techniques et stratégiques nécessaires pour lancer et développer des projets innovants en solo.</p>
+            <a href="cv_Mamadou.pdf" class="btn" download>Télécharger mon CV</a>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Mes Projets</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Portfolio Personnel</h3>
+                    <p>Un site web personnel présentant mon parcours et mes compétences.</p>
+                    <div class="tags">
+                        <span>#html</span>
+                        <span>#css</span>
+                        <span>#js</span>
+                    </div>
+                    <a href="#" class="project-link">Voir</a>
+                </div>
+            </div>
+            <p class="project-footer">Projet développé dans le cadre de ma formation avec l'Organisation Internationale de la Francophonie.</p>
+        </div>
+    </section>
+
+    <!-- Section Compétences -->
+    <section id="skills">
+        <div class="container">
+            <h2>Mes Compétences</h2>
+            <div class="skills-grid">
+
+                <!-- Soft Skills -->
+                <div class="skills-card">
+                    <h3>Soft Skills</h3>
+
+                    <div class="skill">
+                        <span>Gestion de projet</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width:70%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <span>Résolution de problème</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width:50%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <span>Adaptabilité</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width:90%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hard Skills -->
+
+                <div class="skill">
+                    <span>Python</span>
+
+                    <div class="progress-bar">
+                        <div class="progress" style="width:80%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                    <span>R</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width:70%"></div>
+                        </div>
+                      </div>
+
+                    <div class="skill">
+                        <span>HTML</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width:95%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <span>CSS</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width:70%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <span>JavaScript</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width:60%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <span>VS Code</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width:95%"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Vous avez un projet en tête ? N'hésitez pas à me contacter</h2>
+            <form id="contact-form">
+                <input type="text" placeholder="Votre nom">
+                <input type="email" placeholder="Votre email">
+                <textarea placeholder="Votre message" rows="4"></textarea>
+                <button type="submit" class="btn">Envoyer</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Designed by Mamadou</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
