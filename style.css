@@ -1,10 +1,15 @@
-/* Style général */
-body {
-    font-family: Arial, sans-serif;
+/* ===== RESET ET BASE ===== */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
     background: white;
     color: #333;
+    line-height: 1.6;
 }
 
 .container {
@@ -13,17 +18,28 @@ body {
     max-width: 1000px;
 }
 
-/* Boutons */
+/* ===== BOUTONS ===== */
 .btn {
     background: teal;
     color: white;
-    padding: 10px 20px;
+    padding: 12px 25px;
     border-radius: 5px;
     display: inline-block;
     margin-top: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-/* Menu */
+.btn:hover {
+    background: #006666;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== NAVIGATION ===== */
 nav {
     position: fixed;
     top: 10px;
@@ -31,7 +47,7 @@ nav {
     z-index: 1000;
 }
 
-/* Hamburger */
+/* Menu Hamburger */
 .hamburger {
     display: flex;
     flex-direction: column;
@@ -39,12 +55,14 @@ nav {
     width: 25px;
     height: 20px;
     cursor: pointer;
+    padding: 10px;
 }
 
 .hamburger div {
     height: 3px;
     background: #333;
     border-radius: 2px;
+    transition: 0.3s;
 }
 
 /* Menu par défaut */
@@ -54,45 +72,42 @@ nav {
     top: 40px;
     right: 0;
     background: #f1f1f1;
-    padding: 10px;
+    padding: 15px;
     border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.nav-menu.active {
+    display: block;
 }
 
 /* Liens menu */
 .nav-menu a {
     display: block;
-    padding: 5px 0;
+    padding: 8px 15px;
     text-decoration: none;
     color: #333;
+    transition: color 0.3s;
 }
 
 .nav-menu a:hover {
     color: teal;
 }
 
-/* Version desktop */
-@media (min-width: 769px) {
-    .nav-menu {
-        display: flex !important;
-        position: static;
-        background: none;
-        padding: 0;
-        gap: 10px;
-    }
-    .hamburger {
-        display: none;
-    }
+/* ===== SECTIONS ===== */
+section {
+    padding: 60px 0;
 }
 
 /* Section Hero */
 #hero {
     background: teal;
     color: white;
-    padding: 80px 20px;
+    padding: 100px 20px;
     text-align: center;
 }
 
-/* Ma Photo */
+/* Photo Hero */
 .hero-photo {
     width: 150px;
     height: 150px;
@@ -101,117 +116,87 @@ nav {
     margin: 0 auto 20px;
     display: block;
     border: 3px solid white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-@media (max-width: 480px) {
-    .hero-photo {
-        width: 120px;
-        height: 120px;
-    }
-}
-
-@media (min-width: 481px) and (max-width: 768px) {
-    .hero-photo {
-        width: 130px;
-        height: 130px;
-    }
-}
-
-/* Section A Propos */
+/* Section À Propos */
 #about {
-    padding: 40px 20px;
+    padding: 60px 20px;
     text-align: center;
+    background: #f9f9f9;
 }
 
 /* Section Projets */
 #projects {
-    background: #f9f9f9;
-    padding: 40px 20px;
+    background: white;
+    padding: 60px 20px;
 }
 
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Cartes de projet */
 .project-card {
     background: white;
-    padding: 15px;
-    margin: 10px;
+    padding: 25px;
     border: 1px solid #ddd;
-}
-
-/* Section Compétences */
-#skills {
-    padding: 40px 20px;
-    background: #f1f1f1;
-}
-
-.skills-card {
-    background: white;
-    padding: 15px;
-    margin-bottom: 20px;
-}
-
-.skill {
-    margin-bottom: 10px;
-}
-
-.progress-bar {
-    background: #ddd;
-    height: 10px;
-    border-radius: 5px;
-}
-
-.progress {
-    background: teal;
-    height: 10px;
-    border-radius: 5px;
-}
-
-/* Section Contact */
-#contact {
-    padding: 40px 20px;
-    text-align: center;
-}
-
-#contact input, #contact textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 8px 0;
-}
-
-/* Footer */
-footer {
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 15px;
-}
-/* Ajoutez ces styles à votre fichier style.css existant */
-
-/* Badge projet vedette */
-.project-featured {
+    border-radius: 10px;
+    transition: all 0.3s ease;
     position: relative;
-    border: 2px solid #4FC3F7;
-    background: linear-gradient(135deg, #ffffff 0%, #f8fdff 100%);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Carte vedette Microdata */
+.project-featured {
+    border: 2px solid teal;
+    background: linear-gradient(135deg, #ffffff 0%, #f0fafa 100%);
 }
 
 .project-badge {
     position: absolute;
     top: -10px;
     right: 20px;
-    background: #4FC3F7;
+    background: teal;
     color: white;
     padding: 5px 15px;
     border-radius: 15px;
     font-size: 0.8rem;
     font-weight: bold;
-    box-shadow: 0 2px 10px rgba(79, 195, 247, 0.3);
+    box-shadow: 0 2px 10px rgba(0, 128, 128, 0.3);
+}
+
+/* Tags */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.tags span {
+    background: #e0f2f2;
+    color: teal;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
 }
 
 /* Fonctionnalités du projet */
 .project-features {
     margin: 1.5rem 0;
     padding: 1rem;
-    background: rgba(79, 195, 247, 0.05);
+    background: rgba(0, 128, 128, 0.05);
     border-radius: 10px;
-    border-left: 4px solid #4FC3F7;
+    border-left: 4px solid teal;
 }
 
 .project-features h4 {
@@ -236,11 +221,144 @@ footer {
     content: "✓";
     position: absolute;
     left: 0;
-    color: #4FC3F7;
+    color: teal;
     font-weight: bold;
 }
 
-/* Section expérience */
+/* Statistiques projets */
+.project-stats {
+    display: flex;
+    gap: 10px;
+    margin: 1.5rem 0;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.stat {
+    text-align: center;
+    padding: 8px 12px;
+    background: rgba(0, 128, 128, 0.1);
+    border-radius: 8px;
+    min-width: 80px;
+    border: 1px solid teal;
+}
+
+.stat strong {
+    display: block;
+    color: teal;
+    font-size: 1.1em;
+}
+
+.stat small {
+    font-size: 0.75em;
+    opacity: 0.8;
+    color: #666;
+}
+
+/* Liens projets */
+.project-links {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.project-links .project-link {
+    flex: 1;
+    text-align: center;
+    padding: 10px 15px;
+    background: teal;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+}
+
+.project-links .project-link:hover {
+    background: #006666;
+}
+
+/* Statut projet */
+.project-status {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.status-badge {
+    background: #ff9800;
+    color: white;
+    padding: 6px 15px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Pied de page projet */
+.project-footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 2rem;
+    background: rgba(0, 128, 128, 0.1);
+    border-radius: 15px;
+    border-left: 4px solid teal;
+}
+
+.project-footer p {
+    margin: 0.5rem 0;
+    color: #333;
+}
+
+.project-footer p:first-child {
+    font-weight: bold;
+    color: teal;
+}
+
+/* ===== SECTION COMPÉTENCES ===== */
+#skills {
+    padding: 60px 20px;
+    background: #f1f1f1;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.skills-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.skill {
+    margin-bottom: 1.5rem;
+}
+
+.skill span {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.progress-bar {
+    background: #ddd;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress {
+    background: teal;
+    height: 10px;
+    border-radius: 5px;
+    transition: width 0.8s ease-in-out;
+}
+
+/* ===== SECTION EXPÉRIENCE ===== */
 .experience-section {
     margin-top: 4rem;
     padding-top: 2rem;
@@ -259,7 +377,7 @@ footer {
     padding: 2rem;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    border-left: 5px solid #4FC3F7;
+    border-left: 5px solid teal;
 }
 
 .experience-header {
@@ -278,9 +396,9 @@ footer {
 }
 
 .experience-date {
-    background: #e3f2fd;
-    color: #1976d2;
-    padding: 5px 12px;
+    background: #e0f2f2;
+    color: teal;
+    padding: 6px 15px;
     border-radius: 15px;
     font-size: 0.9rem;
     font-weight: 500;
@@ -308,43 +426,98 @@ footer {
     content: "▶";
     position: absolute;
     left: 0;
-    color: #4FC3F7;
+    color: teal;
     font-size: 0.8rem;
 }
 
-/* Pied de page projet */
-.project-footer {
+/* ===== SECTION CONTACT ===== */
+#contact {
+    padding: 60px 20px;
     text-align: center;
-    margin-top: 3rem;
-    padding: 2rem;
-    background: rgba(79, 195, 247, 0.1);
-    border-radius: 15px;
-    border-left: 4px solid #4FC3F7;
+    background: #f9f9f9;
 }
 
-.project-footer p {
-    margin: 0.5rem 0;
-    color: #333;
+#contact-form {
+    max-width: 600px;
+    margin: 2rem auto 0;
 }
 
-.project-footer p:first-child {
-    font-weight: bold;
-    color: #1976d2;
+#contact input, #contact textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
 }
 
-/* Animation pour le projet vedette */
+#contact input:focus, #contact textarea:focus {
+    outline: none;
+    border-color: teal;
+    box-shadow: 0 0 0 2px rgba(0, 128, 128, 0.2);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* ===== ANIMATIONS ===== */
 @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(79, 195, 247, 0.4); }
-    70% { box-shadow: 0 0 0 10px rgba(79, 195, 247, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(79, 195, 247, 0); }
+    0% { box-shadow: 0 0 0 0 rgba(0, 128, 128, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(0, 128, 128, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 128, 128, 0); }
 }
 
 .project-featured {
     animation: pulse 2s infinite;
 }
 
-/* Responsive pour l'expérience */
-@media (max-width: 768px) {
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.project-card, .skills-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+    .hero-photo {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-stats {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .project-links {
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .hero-photo {
+        width: 130px;
+        height: 130px;
+    }
+    
     .experience-header {
         flex-direction: column;
         align-items: flex-start;
@@ -353,14 +526,48 @@ footer {
     .experience-date {
         align-self: flex-start;
     }
+}
+
+/* Version desktop */
+@media (min-width: 769px) {
+    .nav-menu {
+        display: flex !important;
+        position: static;
+        background: none;
+        padding: 0;
+        gap: 20px;
+    }
     
-    .project-features {
-        padding: 0.8rem;
+    .hamburger {
+        display: none;
+    }
+    
+    .nav-menu a {
+        display: inline-block;
+    }
+}
+
+/* Améliorations mobiles */
+@media (max-width: 768px) {
+    section {
+        padding: 40px 0;
+    }
+    
+    #hero {
+        padding: 80px 20px;
     }
     
     .project-badge {
         position: static;
         display: inline-block;
         margin-bottom: 1rem;
+    }
+    
+    .project-features {
+        padding: 0.8rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
     }
 }
