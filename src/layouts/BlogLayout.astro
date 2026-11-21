@@ -1,0 +1,54 @@
+---
+const { title = "Mamadou's Journal", description = "Building, learning & sharing." } = Astro.props;
+const base = "/Mon-Portfolio";
+---
+<!doctype html>
+<html lang={Astro.url.pathname.includes("/en/") ? "en" : "fr"}>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content={description} />
+  <title>{title} — Mamadou Dian Diallo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href={`${base}/style.css`} />
+  <link rel="stylesheet" href={`${base}/blog.css`} />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href={`${base}/`}>MD<span>.</span></a>
+    <nav class="nav blog-nav">
+      <a href={`${base}/#about`}>About</a>
+      <a href={`${base}/#projects`}>Projects</a>
+      <a href={`${base}/blog/`}>Blog</a>
+      <a href={`${base}/#contact`}>Contact ↗</a>
+    </nav>
+    <div class="preferences">
+      <button class="utility-btn" id="blogTheme" aria-label="Toggle theme">☾</button>
+      <a class="language-btn" href={Astro.url.pathname.includes("/en/") ? Astro.url.pathname : Astro.url.pathname.replace("/fr/", "/en/").replace("/blog/", "/blog/en/")} aria-label="English">EN</a>
+      <a class="language-btn" href={Astro.url.pathname.includes("/fr/") ? Astro.url.pathname : Astro.url.pathname.replace("/en/", "/fr/").replace("/blog/", "/blog/fr/")} aria-label="Français">FR</a>
+    </div>
+  </header>
+  <slot />
+  <footer class="footer">
+    <a class="brand" href={`${base}/`}>MD<span>.</span></a>
+    <p>© {new Date().getFullYear()} Mamadou Dian Diallo</p>
+    <a href={`${base}/`}>Portfolio ↗</a>
+  </footer>
+  <script is:inline>
+    const savedTheme = localStorage.getItem('portfolio-theme') || 'light';
+    document.documentElement.dataset.theme = savedTheme;
+    const themeButton = document.querySelector('#blogTheme');
+    if (themeButton) {
+      themeButton.textContent = savedTheme === 'dark' ? '☀' : '☾';
+      themeButton.addEventListener('click', () => {
+        const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+        document.documentElement.dataset.theme = next;
+        localStorage.setItem('portfolio-theme', next);
+        themeButton.textContent = next === 'dark' ? '☀' : '☾';
+      });
+    }
+  </script>
+</body>
+</html>

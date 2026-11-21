@@ -1,0 +1,59 @@
+---
+import { getCollection } from 'astro:content';
+import BlogLayout from '../../../layouts/BlogLayout.astro';
+export async function getStaticPaths() {
+  return [{ params: { language: 'fr' } }, { params: { language: 'en' } }];
+}
+const { language = 'fr' } = Astro.params;
+const isFr = language === 'fr';
+const allPosts = await getCollection('blog', ({ data }) => !data.draft && data.language === language);
+const posts = allPosts.sort((a,b) => b.data.date.valueOf() - a.data.date.valueOf());
+const featured = posts.find(p => p.data.featured) ?? posts[0];
+const others = posts.filter(p => p.id !== featured?.id);
+const labels = isFr
+  ? ['Ingénierie logicielle','Intelligence artificielle','Projets & entrepreneuriat','Réflexions personnelles']
+  : ['Software Engineering','Artificial Intelligence','Projects & Entrepreneurship','Personal Insights'];
+const categories = ['Software Engineering','Artificial Intelligence','Projects & Entrepreneurship','Personal Insights'];
+
+---
+<BlogLayout title="Blog" description={isFr ? "Articles, notes et réflexions de Mamadou Dian Diallo." : "Articles, notes and perspectives by Mamadou Dian Diallo."}>
+  <main class="blog-shell">
+    <section class="blog-hero">
+      <p class="blog-kicker">PERSONAL JOURNAL & TECHNICAL BLOG</p>
+      <h1>{isFr ? <>Des idées à <em>construire.</em><br/>Des expériences à partager.</> : <>Ideas worth <em>building.</em><br/>Stories worth sharing.</>}</h1>
+      <p class="blog-intro">{isFr ? "Un espace pour partager mes apprentissages, mes expériences de terrain et mes réflexions sur le développement logiciel, l'intelligence artificielle et l'entrepreneuriat." : "A space to share what I learn, practical experiences and perspectives on software engineering, artificial intelligence and entrepreneurship."}</p>
+      <div class="blog-tabs">
+        {categories.map((c,i) => <a href={`#category-${i}`}>{labels[i]}</a>)}
+        <a href="/Mon-Portfolio/blog/contributors/">Contributeurs</a>
+      </div>
+    </section>
+    {featured ? (
+      <section class="featured-post">
+        <img src={featured.data.cover ? `/Mon-Portfolio${featured.data.cover}` : '/Mon-Portfolio/assets/mycampux.jpg'} alt="" />
+        <div class="featured-copy">
+          <p class="post-meta">FEATURED · {featured.data.category.toUpperCase()}</p>
+          <h2>{featured.data.title}</h2>
+          <p>{featured.data.description}</p>
+          <p class="post-meta">By {featured.data.author} · {featured.data.readingTime ?? 5} min read</p>
+          <a href={`/Mon-Portfolio/blog/${featured.data.language}/${featured.slug}/`}>{isFr ? 'Lire l’article ↗' : 'Read article ↗'}</a>
+        </div>
+      </section>
+    ) : (
+      <div class="blog-empty"><strong>Le premier article arrive bientôt.</strong><br/>Je prépare ici des retours d'expérience, des notes techniques et des réflexions personnelles. Les articles seront publiés après relecture.</div>
+    )}
+    {categories.map((category,i) => {
+      const group = posts.filter(p => p.data.category === category);
+      return <section id={`category-${i}`} style="margin:42px 0">
+        <h2 class="blog-section-title">{labels[i]}</h2>
+        {group.length ? <div class="post-grid">{group.map(post => <article class="post-card">
+          <img src={post.data.cover ? `/Mon-Portfolio${post.data.cover}` : '/Mon-Portfolio/assets/mycampux.jpg'} alt="" loading="lazy"/>
+          <div class="post-card-body">
+            <p class="post-meta">{post.data.language.toUpperCase()} · {post.data.date.toLocaleDateString(post.data.language === 'fr' ? 'fr-FR' : 'en-GB')}</p>
+            <h3>{post.data.title}</h3><p>{post.data.description}</p>
+            <a href={`/Mon-Portfolio/blog/${post.data.language}/${post.slug}/`}>{isFr ? 'Lire →' : 'Read →'}</a>
+          </div></article>)}</div> : <div class="blog-empty">Les publications de cette rubrique seront bientôt disponibles.</div>}
+      </section>;
+    })}
+    <section class="blog-empty"><strong>Proposer un article invité</strong><br/>Tu souhaites partager une expérience ou une expertise ? Envoie une proposition avec ton sujet, un résumé et quelques lignes de présentation à <a href="mailto:mamadou.dian.diallo@hec.ac.ma">mamadou.dian.diallo@hec.ac.ma</a>. Chaque contribution est relue avant publication.</section>
+  </main>
+</BlogLayout>

@@ -1,64 +1,133 @@
-<!DOCTYPE html>
-<div class="project">
-<h3>Cabinet Préciva</h3>
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Mamadou Dian Diallo — Software Engineer, AI Systems & Software Architecture.">
+  <meta name="theme-color" content="#0b1220">
+  <title>Mamadou Dian Diallo — Software Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page">
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Mamadou Dian Diallo">MD<span>.</span></a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="#about" data-i18n="navAbout">À propos</a>
+      <a href="#projects" data-i18n="navProjects">Projets</a>
+      <a href="#expertise" data-i18n="navExpertise">Expertise</a>
+      <a href="#journey" data-i18n="navJourney">Parcours</a>
+      <a href="#contact" class="nav-contact" data-i18n="navContact">Contact ↗</a>
+    </nav>
+    <div class="preferences">
+      <button class="utility-btn" id="themeToggle" aria-label="Switch color theme" title="Switch color theme"><span id="themeIcon">☾</span></button>
+      <button class="language-btn" id="languageToggle" aria-label="Switch language">EN</button>
+    </div>
+  </header>
 
-<p>Site web cabinet médical responsive</p>
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-text">
+        <p class="eyebrow"><span class="pulse"></span><span data-i18n="availability">OUVERT AUX OPPORTUNITÉS</span></p>
+        <h1 data-i18n="heroTitle">Concevoir des logiciels.<br><em>Construire les systèmes de demain.</em></h1>
+        <p class="role">SOFTWARE ENGINEER <span>·</span> AI SYSTEMS &amp; SOFTWARE ARCHITECTURE</p>
+        <p class="lead" data-i18n="heroLead">Je suis Mamadou Dian Diallo, étudiant en Intelligence Artificielle et Gestion à HEC Rabat. Je m'intéresse à l'ingénierie logicielle, au développement d'applications et à l'intégration de l'IA dans des solutions concrètes.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects"><span data-i18n="discoverProjects">Découvrir mes projets</span> ↘</a>
+          <a class="btn btn-outline" href="CV_Mamadou_Dian_Diallo.pdf" target="_blank" rel="noopener"><span data-i18n="viewCV">Voir mon CV</span> ↗</a>
+        </div>
+        <div class="hero-links">
+          <a href="https://github.com/mdou10297-source" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="https://www.linkedin.com/in/mamadou-dian-diallo-593740383/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <span>RABAT, MOROCCO</span>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="portrait-frame"><div class="portrait-wrap"><img src="assets/mamadou.jpg" alt="Portrait de Mamadou Dian Diallo, en veste beige et lunettes"></div><div class="portrait-caption"><span data-i18n="portraitLabel">BASÉ À RABAT · ORIGINAIRE DE GUINÉE</span><strong>MAMADOU DIAN DIALLO</strong><small>SOFTWARE ENGINEERING · AI SYSTEMS</small></div><span class="portrait-corner" aria-hidden="true">MD / 01</span></div>
+        <div class="hero-stamp"><span>MY DIRECTION</span><strong>ENGINEER<br>→ ARCHITECT</strong></div>
+        <div class="hero-orbit"></div>
+        <span class="hero-coord">GUINEA 🇬🇳 / MOROCCO 🇲🇦</span>
+      </div>
+    </section>
 
-<a href="https://cabinet-preciva.netlify.app/">Voir</a>
+    <div class="ticker"><div>SOFTWARE ENGINEERING <b>✳</b> ARTIFICIAL INTELLIGENCE <b>✳</b> DATA &amp; MACHINE LEARNING <b>✳</b> BUILDING DIGITAL PRODUCTS <b>✳</b></div></div>
 
+    <section class="section about" id="about">
+      <div class="section-heading"><p class="eyebrow">01 / <span data-i18n="aboutLabel">À PROPOS</span></p><h2 data-i18n="aboutTitle">La technologie doit<br><em>répondre à de vrais besoins.</em></h2></div>
+      <div class="about-copy">
+        <p class="about-lead" data-i18n="aboutLead">Je prends plaisir à transformer une idée ou un besoin en solution numérique : analyser le problème, concevoir l'approche technique, développer et améliorer le produit.</p>
+        <p data-i18n="aboutP1">Mon expérience couvre le développement web full-stack, le machine learning et l'automatisation de processus avec l'IA. J'apprends principalement en construisant et en confrontant mes solutions à des usages réels.</p>
+        <p data-i18n="aboutP2">Mon ambition est de progresser vers le métier de Software Engineer, puis vers l'architecture de systèmes logiciels et intelligents. Je souhaite contribuer à des technologies utiles, accessibles et capables de répondre à des enjeux concrets, notamment en Afrique.</p>
+        <div class="about-stats"><div><strong>01</strong><span data-i18n="statSoftware">Ingénierie logicielle</span></div><div><strong>02</strong><span data-i18n="statAI">IA &amp; Data</span></div><div><strong>03</strong><span data-i18n="statBuild">Projets concrets</span></div></div>
+      </div>
+    </section>
+
+    <section class="section projects" id="projects">
+      <div class="section-heading heading-split"><div><p class="eyebrow">02 / <span data-i18n="projectsLabel">PROJETS SÉLECTIONNÉS</span></p><h2 data-i18n="projectsTitle">Ce que je <em>construis.</em></h2></div><p class="section-note" data-i18n="projectsIntro">Une sélection de projets et d'expériences. Certains sont en développement ou ne disposent pas encore d'une démonstration publique ; les visuels sont illustratifs.</p></div>
+      <div class="project-grid">
+        <article class="project-card project-wide">
+          <div class="project-image"><img src="assets/mycampux.jpg" alt="Captures réelles de la page d’accueil et de l’interface MyCampux"><span class="image-label" data-i18n="mycampuxImageLabel">CAPTURES RÉELLES DU PRODUIT</span><span class="project-index">01</span></div>
+          <div class="project-content"><div class="project-meta"><span data-i18n="projectPlatform">PLATEFORME NUMÉRIQUE</span><span>2026 — NOW</span></div><h3>MyCampux</h3><p data-i18n="mycampuxDesc">Fondateur et développeur full-stack d'un écosystème numérique pour la vie étudiante : communauté, logement, mobilité, marketplace, événements et opportunités. Développé avec React, Laravel/PHP et MySQL, avec des fonctionnalités d'IA et un déploiement Linux. Projet testé par des utilisateurs et présélectionné à la première phase de Boost Up Lab Rabat (Technopark).</p><div class="tags"><span>React</span><span>Laravel / PHP</span><span>MySQL</span><span>Linux</span><span>AI</span></div></div>
+        </article>
+        <article class="project-card">
+          <div class="project-image"><img src="assets/recruitment-ai.jpg" alt="Illustration conceptuelle d'un système d'automatisation de recrutement par IA"><span class="image-label" data-i18n="conceptVisual">VISUEL ILLUSTRATIF</span><span class="project-index">02</span></div>
+          <div class="project-content"><div class="project-meta"><span data-i18n="projectAutomation">AUTOMATISATION IA</span><span>2026</span></div><h3 data-i18n="recruitTitle">Agent IA de recrutement &amp; WhatsApp</h3><p data-i18n="recruitDesc">Conception d'un agent de recrutement basé sur l'IA et de solutions d'automatisation WhatsApp. Création de workflows, intégration de services IA et connexion aux outils de gestion des données, avec déploiement et tests sur serveur Linux.</p><div class="tags"><span>n8n</span><span>Evolution API</span><span>LLM</span><span>Docker</span><span>Linux</span></div></div>
+        </article>
+        <article class="project-card">
+          <div class="project-image"><img src="assets/real-estate-ml.jpg" alt="Illustration conceptuelle de l'analyse de données immobilières et du machine learning"><span class="image-label" data-i18n="conceptVisual">VISUEL ILLUSTRATIF</span><span class="project-index">03</span></div>
+          <div class="project-content"><div class="project-meta"><span data-i18n="projectML">MACHINE LEARNING</span><span>2025</span></div><h3 data-i18n="realEstateTitle">Prédiction immobilière</h3><p data-i18n="realEstateDesc">Projet réalisé chez Microdata : collecte et préparation de données immobilières, web scraping avec Selenium et BeautifulSoup, exploration avec pandas et entraînement de modèles de prédiction avec scikit-learn.</p><div class="tags"><span>Python</span><span>Selenium</span><span>BeautifulSoup</span><span>pandas</span><span>scikit-learn</span></div></div>
+        </article>
+        <article class="project-card">
+          <div class="project-image"><img src="assets/rallyia-edtech.jpg" alt="Photos de Mamadou Dian Diallo lors de RallyIA Future Lab Morocco 2030 et du prix EdTech"><span class="image-label" data-i18n="rallyImageLabel">PHOTOS DE L’ÉVÉNEMENT & DU PRIX</span><span class="project-index">04</span></div>
+          <div class="project-content"><div class="project-meta"><span>EDTECH / INNOVATION</span><span>2026</span></div><h3>RallyIA — Future Lab Morocco 2030</h3><p data-i18n="rallyDesc">Projet d'innovation dans le domaine de l'éducation numérique. Lauréat du 1er prix en équipe dans la catégorie EdTech lors de RallyIA 2026.</p><div class="tags"><span>EdTech</span><span>Innovation</span><span>Team project</span></div></div>
+        </article>
+        <article class="project-card">
+          <div class="project-image garage-image"><div class="garage-ui"><span>GARAGE MANAGER</span><div class="garage-row"><i></i><b></b><b></b></div><div class="garage-row"><i></i><b></b><b></b></div><div class="garage-row"><i></i><b></b><b></b></div></div><span class="image-label" data-i18n="academicVisual">APERÇU CONCEPTUEL</span><span class="project-index">05</span></div>
+          <div class="project-content"><div class="project-meta"><span data-i18n="academicProject">PROJET ACADÉMIQUE</span><span>2024</span></div><h3 data-i18n="garageTitle">Application de gestion de garage</h3><p data-i18n="garageDesc">Développement d'une application web avec Laravel, MySQL et Tailwind CSS. Mise en œuvre de l'architecture MVC, des opérations CRUD, des relations entre entités et tests avec Selenium IDE.</p><div class="tags"><span>Laravel</span><span>MySQL</span><span>Tailwind CSS</span><span>MVC</span><span>Selenium IDE</span></div></div>
+        </article>
+      </div>
+      <p class="project-footnote" data-i18n="projectFootnote">Les images des projets sont des illustrations de présentation et ne sont pas des captures d'écran des applications originales.</p>
+    </section>
+
+    <section class="section expertise" id="expertise">
+      <div class="section-heading"><p class="eyebrow">03 / <span data-i18n="expertiseLabel">COMPÉTENCES</span></p><h2 data-i18n="expertiseTitle">Des bases pour<br><em>concevoir et développer.</em></h2><p class="section-note" data-i18n="expertiseNote">Technologies mentionnées dans mon parcours et mes expériences.</p></div>
+      <div class="skill-list">
+        <div class="skill"><span>01</span><div><h3 data-i18n="skillLanguages">Langages</h3><p>Python · PHP · JavaScript · SQL · Java · C++</p></div></div>
+        <div class="skill"><span>02</span><div><h3 data-i18n="skillWeb">Développement web</h3><p>React · Laravel · REST APIs</p></div></div>
+        <div class="skill"><span>03</span><div><h3 data-i18n="skillAI">IA &amp; Data</h3><p>pandas · NumPy · scikit-learn · Machine Learning · Embeddings · LLM</p></div></div>
+        <div class="skill"><span>04</span><div><h3 data-i18n="skillAutomation">Automatisation &amp; intégration</h3><p>n8n · Evolution API · Groq · Gemini Embeddings · Pinecone</p></div></div>
+        <div class="skill"><span>05</span><div><h3 data-i18n="skillInfra">Infrastructure &amp; outils</h3><p>Git · Docker · Linux / Ubuntu · Nginx · VPS · MySQL</p></div></div>
+      </div>
+    </section>
+
+    <section class="section journey" id="journey">
+      <div class="section-heading"><p class="eyebrow">04 / <span data-i18n="journeyLabel">PARCOURS</span></p><h2 data-i18n="journeyTitle">Apprendre.<br><em>Expérimenter. Progresser.</em></h2></div>
+      <div class="timeline">
+        <div class="timeline-item"><span class="timeline-date">2024 — NOW</span><div><h3>HEC Rabat</h3><p data-i18n="hecDesc">Licence Intelligence Artificielle et Gestion — algorithmique, structures de données, bases de données, statistiques, machine learning et développement web.</p></div></div>
+        <div class="timeline-item"><span class="timeline-date">JUN — JUL 2026</span><div><h3>ELYTES · Casablanca</h3><p data-i18n="elytesDesc">Assistant en communication marketing et automatisation IA : agent de recrutement IA, automatisation WhatsApp, intégrations et déploiement sur Linux.</p></div></div>
+        <div class="timeline-item"><span class="timeline-date">AUG — SEP 2025</span><div><h3>Microdata · Casablanca</h3><p data-i18n="microdataDesc">Stage en développement machine learning autour d'un projet de prédiction immobilière et de traitement de données.</p></div></div>
+        <div class="timeline-item"><span class="timeline-date">JAN — JUL 2024</span><div><h3>Fougoutenk · Guinée</h3><p data-i18n="fougoutenkDesc">Gestion de la communication et du digital : création de contenus et utilisation d'outils numériques de communication.</p></div></div>
+        <div class="timeline-item"><span class="timeline-date">2023</span><div><h3 data-i18n="baccalaureate">Baccalauréat — Sciences Mathématiques</h3><p>Lycée M'Bow · Boké, Guinée</p></div></div>
+      </div>
+    </section>
+
+    <section class="section distinctions">
+      <div class="section-heading"><p class="eyebrow">05 / <span data-i18n="distinctionsLabel">DISTINCTIONS & PROGRAMMES</span></p><h2 data-i18n="distinctionsTitle">Continuer à <em>viser plus loin.</em></h2></div>
+      <div class="distinction-grid">
+        <article><span>01 / AWARD</span><h3>RallyIA 2026</h3><p data-i18n="rallyAward">1er prix en équipe, catégorie EdTech — projet Future Lab Morocco 2030.</p></article>
+        <article><span>02 / SELECTION</span><h3>GCI World 2026</h3><p data-i18n="gciAward">Participant sélectionné au programme en data science et machine learning du Matsuo-Iwasawa Laboratory, University of Tokyo.</p></article>
+      </div>
+      <div class="certifications"><h3 data-i18n="certTitle">Certifications & formations</h3><p>D-CLIC / OIF — Développement Web, niveau avancé (2026)</p><p>IBM / Coursera — Generative AI: Prompt Engineering Basics (2026)</p><p>Coursera Project Network — Automatisation des e-mails avec Mailchimp (2026)</p><p>Orange Digital Center — Web Design avec l'IA (2026), Python (2025), PHP (2025)</p><p>IBM — DevOps and Software Engineering</p></div>
+    </section>
+
+    <section class="contact-section" id="contact"><div class="section contact-inner"><p class="eyebrow">06 / CONTACT</p><h2 data-i18n="contactTitle">Partant pour construire<br><em>quelque chose d'utile ?</em></h2><p data-i18n="contactLead">Je suis ouvert aux opportunités, collaborations et échanges autour du développement logiciel et de l'intelligence artificielle.</p><div class="contact-actions"><a class="btn btn-primary" href="mailto:mamadou.dian.diallo@hec.ac.ma">mamadou.dian.diallo@hec.ac.ma ↗</a><a class="btn btn-light-outline" href="https://www.linkedin.com/in/mamadou-dian-diallo-593740383/" target="_blank" rel="noopener">LinkedIn ↗</a><a class="btn btn-light-outline" href="https://github.com/mdou10297-source" target="_blank" rel="noopener">GitHub ↗</a></div><p class="contact-phone">+212 771 769 721 · Rabat, Maroc</p></div></section>
+  </main>
+  <footer class="footer"><a class="brand" href="#home">MD<span>.</span></a><p>© <span id="year"></span> Mamadou Dian Diallo</p><a href="#home" data-i18n="backTop">Retour en haut ↑</a></footer>
 </div>
-
-</div>
-</section>
-
-<section id="skills">
-<div class="container">
-
-<h2>Compétences</h2>
-
-<div class="skills-grid">
-
-<div>
-<h3>Frontend</h3>
-<p>HTML CSS JavaScript React</p>
-</div>
-
-<div>
-<h3>Backend</h3>
-<p>Laravel PHP MySQL</p>
-</div>
-
-<div>
-<h3>IA & Data</h3>
-<p>Python Scikit Learn Pandas</p>
-</div>
-
-<div>
-<h3>DevOps</h3>
-<p>Ubuntu Nginx VPS</p>
-</div>
-
-</div>
-
-</div>
-</section>
-
-<section id="contact">
-<div class="container">
-
-<h2>Contact</h2>
-
-<p>Email : mamadou.dian.diallo@hec.ac.ma</p>
-<p>Téléphone : +212 77 176 9721</p>
-
-<a href="https://github.com">GitHub</a>
-
-</div>
-</section>
-
-<footer>
-<p>© 2026 Mamadou Dian Diallo</p>
-</footer>
-
+<script src="script.js"></script>
 </body>
 </html>
