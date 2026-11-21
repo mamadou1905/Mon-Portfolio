@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href={`${import.meta.env.BASE_URL}style.css`}>
+  <link rel="stylesheet" href="/Mon-Portfolio/style.css">
 </head>
 
 <body>
@@ -23,7 +23,7 @@
     <nav class="nav">
       <a href="#about" data-i18n="navAbout">À propos</a>
       <a href="#projects" data-i18n="navProjects">Projets</a>
-      <a href={`${import.meta.env.BASE_URL}blog/fr/`} data-i18n="navBlog">Blog</a>
+      <a href="/Mon-Portfolio/blog/fr/" data-i18n="navBlog">Blog</a>
       <a href="#expertise" data-i18n="navExpertise">Expertise</a>
       <a href="#journey" data-i18n="navJourney">Parcours</a>
       <a href="#contact" class="nav-contact" data-i18n="navContact">Contact ↗</a>
@@ -66,7 +66,7 @@
             <span data-i18n="discoverProjects">Découvrir mes projets</span> ↘
           </a>
 
-          <a class="btn btn-outline" href={`${import.meta.env.BASE_URL}CV_Mamadou_Dian_Diallo.pdf`} target="_blank" rel="noopener">
+          <a class="btn btn-outline" href="/Mon-Portfolio/CV_Mamadou_Dian_Diallo.pdf" target="_blank" rel="noopener">
             <span data-i18n="viewCV">Voir mon CV</span> ↗
           </a>
         </div>
@@ -81,7 +81,7 @@
       <div class="hero-art">
         <div class="portrait-frame">
           <div class="portrait-wrap">
-            <img src={`${import.meta.env.BASE_URL}assets/mamadou.jpg`} alt="Portrait de Mamadou Dian Diallo, en veste beige et lunettes">
+            <img src="assets/mamadou.jpg" alt="Portrait de Mamadou Dian Diallo, en veste beige et lunettes">
           </div>
 
           <div class="portrait-caption">
@@ -171,7 +171,7 @@
         <article class="project-card project-wide">
 
           <div class="project-image">
-            <img src={`${import.meta.env.BASE_URL}assets/mycampux.jpg`} alt="Captures réelles de la page d’accueil et de l’interface MyCampux">
+            <img src="assets/mycampux.jpg" alt="Captures réelles de la page d’accueil et de l’interface MyCampux">
             <span class="image-label" data-i18n="mycampuxImageLabel">CAPTURES RÉELLES DU PRODUIT</span>
             <span class="project-index">01</span>
           </div>
@@ -208,7 +208,7 @@
         <article class="project-card">
 
           <div class="project-image">
-            <img src={`${import.meta.env.BASE_URL}assets/recruitment-ai.jpg`} alt="Illustration conceptuelle d'un système d'automatisation de recrutement par IA">
+            <img src="assets/recruitment-ai.jpg" alt="Illustration conceptuelle d'un système d'automatisation de recrutement par IA">
             <span class="image-label" data-i18n="conceptVisual">VISUEL ILLUSTRATIF</span>
             <span class="project-index">02</span>
           </div>
@@ -241,7 +241,7 @@
         <article class="project-card">
 
           <div class="project-image">
-            <img src={`${import.meta.env.BASE_URL}assets/real-estate-ml.jpg`} alt="Illustration conceptuelle de l'analyse de données immobilières et du machine learning">
+            <img src="assets/real-estate-ml.jpg" alt="Illustration conceptuelle de l'analyse de données immobilières et du machine learning">
             <span class="image-label" data-i18n="conceptVisual">VISUEL ILLUSTRATIF</span>
             <span class="project-index">03</span>
           </div>
@@ -270,7 +270,7 @@
           </div>
         </article>
 
-        <!-- PROJECT 04 : MSSP -->
+                <!-- PROJECT 04 : MSSP -->
         <article class="project-card">
 
           <div class="project-image">
@@ -309,7 +309,6 @@
           </div>
         </article>
 
-        
         <!-- PROJECT 05 : GARAGE MANAGER -->
         <article class="project-card">
 
@@ -320,9 +319,11 @@
               loading="lazy"
               decoding="async"
             >
+
             <span class="image-label" data-i18n="academicVisual">
               APERÇU CONCEPTUEL
             </span>
+
             <span class="project-index">05</span>
           </div>
 
@@ -333,7 +334,9 @@
               <span>2024</span>
             </div>
 
-            <h3 data-i18n="garageTitle">Application de gestion de garage</h3>
+            <h3 data-i18n="garageTitle">
+              Application de gestion de garage
+            </h3>
 
             <p data-i18n="garageDesc">
               Développement d'une application web avec Laravel, MySQL et Tailwind CSS. Mise en œuvre de l'architecture MVC, des opérations CRUD, des relations entre entités et tests avec Selenium IDE.
@@ -349,9 +352,6 @@
 
           </div>
         </article>
-
-      </div>
-    </section>
 
     <!-- EXPERTISE -->
     <section class="section expertise" id="expertise">
@@ -563,7 +563,7 @@
 
     <p>© <span id="year"></span> Mamadou Dian Diallo</p>
 
-    <a href={`${import.meta.env.BASE_URL}blog/fr/`} data-i18n="navBlog">Blog</a>
+    <a href="/Mon-Portfolio/blog/fr/" data-i18n="navBlog">Blog</a>
 
     <a href="#home" data-i18n="backTop">Retour en haut ↑</a>
 
@@ -571,7 +571,7 @@
 
 </div>
 
-<script is:inline src={`${import.meta.env.BASE_URL}script.js`}></script>
+<script is:inline src="/Mon-Portfolio/script.js"></script>
 
 </body>
 </html>
