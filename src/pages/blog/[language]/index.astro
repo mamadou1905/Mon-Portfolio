@@ -29,7 +29,7 @@ const categories = ['Software Engineering','Artificial Intelligence','Projects &
     </section>
     {featured ? (
       <section class="featured-post">
-        <img src={featured.data.cover ? `/Mon-Portfolio${featured.data.cover}` : '/Mon-Portfolio/assets/mycampux.jpg'} alt="" />
+        {featured.data.cover && <img src={`/Mon-Portfolio${featured.data.cover}`} alt={featured.data.title} />}
         <div class="featured-copy">
           <p class="post-meta">FEATURED · {featured.data.category.toUpperCase()}</p>
           <h2>{featured.data.title}</h2>
@@ -46,7 +46,7 @@ const categories = ['Software Engineering','Artificial Intelligence','Projects &
       return <section id={`category-${i}`} style="margin:42px 0">
         <h2 class="blog-section-title">{labels[i]}</h2>
         {group.length ? <div class="post-grid">{group.map(post => <article class="post-card">
-          <img src={post.data.cover ? `/Mon-Portfolio${post.data.cover}` : '/Mon-Portfolio/assets/mycampux.jpg'} alt="" loading="lazy"/>
+          {post.data.cover && <img src={`/Mon-Portfolio${post.data.cover}`} alt={post.data.title} loading="lazy"/>}
           <div class="post-card-body">
             <p class="post-meta">{post.data.language.toUpperCase()} · {post.data.date.toLocaleDateString(post.data.language === 'fr' ? 'fr-FR' : 'en-GB')}</p>
             <h3>{post.data.title}</h3><p>{post.data.description}</p>
