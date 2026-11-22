@@ -35,7 +35,7 @@ const categories = ['Software Engineering','Artificial Intelligence','Projects &
           <h2>{featured.data.title}</h2>
           <p>{featured.data.description}</p>
           <p class="post-meta">By {featured.data.author} · {featured.data.readingTime ?? 5} min read</p>
-          <a href={`/Mon-Portfolio/blog/${featured.data.language}/${featured.slug}/`}>{isFr ? 'Lire l’article ↗' : 'Read article ↗'}</a>
+          <a href={`/Mon-Portfolio/blog/${featured.data.language}/${featured.id}/`}>{isFr ? 'Lire l’article ↗' : 'Read article ↗'}</a>
         </div>
       </section>
     ) : (
@@ -50,7 +50,7 @@ const categories = ['Software Engineering','Artificial Intelligence','Projects &
           <div class="post-card-body">
             <p class="post-meta">{post.data.language.toUpperCase()} · {post.data.date.toLocaleDateString(post.data.language === 'fr' ? 'fr-FR' : 'en-GB')}</p>
             <h3>{post.data.title}</h3><p>{post.data.description}</p>
-            <a href={`/Mon-Portfolio/blog/${post.data.language}/${post.slug}/`}>{isFr ? 'Lire →' : 'Read →'}</a>
+            <a href={`/Mon-Portfolio/blog/${post.data.language}/${post.id}/`}>{isFr ? 'Lire →' : 'Read →'}</a>
           </div></article>)}</div> : <div class="blog-empty">Les publications de cette rubrique seront bientôt disponibles.</div>}
       </section>;
     })}
